@@ -1,0 +1,140 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/menus/charSelect.gd" type="Script" id=1]
+[ext_resource path="res://art/menus/charBlock.png" type="Texture" id=2]
+[ext_resource path="res://themes/playerPanelText.tres" type="Theme" id=3]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="bg"]
+margin_right = 320.0
+margin_bottom = 720.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="bg/TextureRect"]
+margin_right = 320.0
+margin_bottom = 720.0
+theme = ExtResource( 3 )
+text = "Press
+\"Start\"
+or
+\"A\"
+to Join!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect2" type="TextureRect" parent="bg"]
+anchor_left = 0.25
+anchor_right = 0.25
+margin_left = 310.0
+margin_right = 630.0
+margin_bottom = 720.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="bg/TextureRect2"]
+margin_right = 320.0
+margin_bottom = 720.0
+theme = ExtResource( 3 )
+text = "Press
+\"Start\"
+or
+\"A\"
+to Join!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect3" type="TextureRect" parent="bg"]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 620.0
+margin_right = 940.0
+margin_bottom = 720.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="bg/TextureRect3"]
+margin_right = 320.0
+margin_bottom = 720.0
+theme = ExtResource( 3 )
+text = "Press
+\"Start\"
+or
+\"A\"
+to Join!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect4" type="TextureRect" parent="bg"]
+anchor_left = 0.75
+anchor_right = 0.75
+margin_left = 930.0
+margin_right = 1250.0
+margin_bottom = 720.0
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="bg/TextureRect4"]
+margin_right = 320.0
+margin_bottom = 720.0
+theme = ExtResource( 3 )
+text = "Press
+\"Start\"
+or
+\"A\"
+to Join!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="noDoublesTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[node name="justPickedTimer" type="Timer" parent="."]
+wait_time = 0.05
+one_shot = true
+autostart = true
+
+[node name="playerLeftTimer" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="noDoublesTimer" to="." method="_on_noDoublesTimer_timeout"]
+[connection signal="timeout" from="justPickedTimer" to="." method="_on_justPickedTimer_timeout"]
+[connection signal="timeout" from="playerLeftTimer" to="." method="_on_playerLeftTimer_timeout"]

@@ -1,0 +1,1580 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://scenes/menus/title.gd" type="Script" id=1]
+[ext_resource path="res://themes/playerPanelText.tres" type="Theme" id=2]
+[ext_resource path="res://themes/Early GameBoy.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://themes/shop_button.tres" type="Theme" id=4]
+[ext_resource path="res://themes/playerPanelTextAlt.tres" type="Theme" id=5]
+[ext_resource path="res://art/menus/controls2.png" type="Texture" id=6]
+[ext_resource path="res://art/menus/controls1.png" type="Texture" id=7]
+[ext_resource path="res://art/menus/charBlock.png" type="Texture" id=8]
+[ext_resource path="res://art/menus/menu_arrow.png" type="Texture" id=9]
+[ext_resource path="res://art/menus/main menu/Sketch001.png" type="Texture" id=10]
+[ext_resource path="res://art/menus/main menu/Logo_complete.png" type="Texture" id=11]
+[ext_resource path="res://scenes/menus/mm_button.tscn" type="PackedScene" id=12]
+[ext_resource path="res://art/menus/main menu/credits.png" type="Texture" id=13]
+[ext_resource path="res://art/menus/main menu/flag_en.png" type="Texture" id=14]
+[ext_resource path="res://art/menus/main menu/flag_fr.png" type="Texture" id=15]
+[ext_resource path="res://art/mod/title.png" type="Texture" id=16]
+
+[sub_resource type="SpriteFrames" id=14]
+animations = [ {
+"frames": [ ExtResource( 14 ) ],
+"loop": false,
+"name": "en",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 15 ) ],
+"loop": false,
+"name": "fr",
+"speed": 5.0
+} ]
+
+[sub_resource type="DynamicFont" id=9]
+size = 24
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 24
+outline_size = 6
+outline_color = Color( 0, 0, 0, 1 )
+extra_spacing_top = 4
+font_data = ExtResource( 3 )
+
+[sub_resource type="DynamicFont" id=10]
+size = 32
+outline_size = 8
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 3 )
+
+[sub_resource type="Animation" id=13]
+resource_name = "idle"
+length = 0.5
+loop = true
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("bgFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mainMenu/logo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 2, 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("mainMenu/startButton:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 40, 310 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("mainMenu/controlsButton:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 100, 410 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("mainMenu/creditsButton:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 160, 510 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("mainMenu/exitButton:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 220, 610 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+resource_name = "intro"
+length = 1.5
+step = 0.0166667
+tracks/0/type = "value"
+tracks/0/path = NodePath("bgFade:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("mainMenu/logo:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.333333, 0.45, 0.516667, 0.6 ),
+"transitions": PoolRealArray( 1, 0.5, -2, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 2.2, 2.2 ), Vector2( 1.9, 1.9 ), Vector2( 2, 2 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("mainMenu/startButton:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.683333, 1.05 ),
+"transitions": PoolRealArray( 1, 0.3, 1 ),
+"update": 0,
+"values": [ Vector2( -500, 310 ), Vector2( -560, 310 ), Vector2( 40, 310 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("mainMenu/controlsButton:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.833333, 1.2 ),
+"transitions": PoolRealArray( 1, 0.3, 1 ),
+"update": 0,
+"values": [ Vector2( -500, 410 ), Vector2( -500, 410 ), Vector2( 100, 410 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("mainMenu/creditsButton:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.983333, 1.35 ),
+"transitions": PoolRealArray( 1, 0.3, 1 ),
+"update": 0,
+"values": [ Vector2( -500, 510 ), Vector2( -440, 510 ), Vector2( 160, 510 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("mainMenu/exitButton:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 1.13333, 1.5 ),
+"transitions": PoolRealArray( 1, 0.3, 1 ),
+"update": 0,
+"values": [ Vector2( -500, 610 ), Vector2( -380, 610 ), Vector2( 220, 610 ) ]
+}
+
+[node name="title" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="bg" type="Sprite" parent="."]
+light_mask = 0
+scale = Vector2( 0.514, 0.514 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="bg2" type="Sprite" parent="."]
+visible = false
+light_mask = 0
+texture = ExtResource( 16 )
+centered = false
+
+[node name="bgFade" type="ColorRect" parent="."]
+light_mask = 0
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 0 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="lockButton" type="Button" parent="."]
+visible = false
+margin_left = 416.0
+margin_top = 330.0
+margin_right = 592.0
+margin_bottom = 379.0
+toggle_mode = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="lockButton"]
+margin_right = 176.0
+margin_bottom = 48.0
+text = "Enable All Upgrades"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="hitboxButton" type="Button" parent="."]
+visible = false
+margin_left = -612.0
+margin_top = 498.0
+margin_right = -426.0
+margin_bottom = 546.0
+toggle_mode = true
+clip_text = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="hitboxButton"]
+margin_right = 186.0
+margin_bottom = 48.0
+text = "Enable Hitboxes"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="mainMenu" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="logo" type="Sprite" parent="mainMenu"]
+position = Vector2( 275, 160 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 11 )
+
+[node name="startButtonOld" type="Button" parent="mainMenu"]
+visible = false
+margin_left = 136.0
+margin_top = 320.0
+margin_right = 394.0
+margin_bottom = 392.0
+theme = ExtResource( 4 )
+button_mask = 0
+text = "Start"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="startButton" parent="mainMenu" instance=ExtResource( 12 )]
+margin_left = 40.0
+margin_top = 310.0
+margin_right = 340.0
+margin_bottom = 410.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath(".")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../controlsButton")
+defaultButton = true
+
+[node name="controlsButton" parent="mainMenu" instance=ExtResource( 12 )]
+margin_left = 100.0
+margin_top = 410.0
+margin_right = 400.0
+margin_bottom = 510.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../startButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../creditsButton")
+type = 1
+
+[node name="creditsButton" parent="mainMenu" instance=ExtResource( 12 )]
+margin_left = 160.0
+margin_top = 510.0
+margin_right = 460.0
+margin_bottom = 610.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../controlsButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath("../exitButton")
+type = 2
+
+[node name="exitButton" parent="mainMenu" instance=ExtResource( 12 )]
+margin_left = 220.0
+margin_top = 610.0
+margin_right = 520.0
+margin_bottom = 710.0
+focus_neighbour_left = NodePath(".")
+focus_neighbour_top = NodePath("../creditsButton")
+focus_neighbour_right = NodePath(".")
+focus_neighbour_bottom = NodePath(".")
+type = 3
+
+[node name="Button" type="TextureButton" parent="mainMenu"]
+visible = false
+margin_left = 1168.0
+margin_top = 659.0
+margin_right = 1268.0
+margin_bottom = 711.0
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="mainMenu/Button"]
+margin_left = -431.0
+margin_top = 12.0
+margin_right = -7.0
+margin_bottom = 42.0
+theme = ExtResource( 2 )
+text = "KEY_MM_LANG"
+align = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="mainMenu/Button"]
+position = Vector2( 50, 26 )
+scale = Vector2( 2, 2 )
+frames = SubResource( 14 )
+animation = "en"
+
+[node name="controlsMenu" type="Control" parent="."]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dark" type="ColorRect" parent="controlsMenu"]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 0.745098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dark2" type="ColorRect" parent="controlsMenu"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1260.0
+margin_bottom = 600.0
+color = Color( 0.270588, 0.270588, 0.270588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="arrowL" type="Sprite" parent="controlsMenu"]
+position = Vector2( 328, 50 )
+texture = ExtResource( 9 )
+
+[node name="arrowR" type="Sprite" parent="controlsMenu"]
+position = Vector2( 74, 50 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="type" type="Label" parent="controlsMenu"]
+margin_left = -23.0
+margin_top = 30.0
+margin_right = 433.0
+margin_bottom = 70.0
+theme = ExtResource( 2 )
+text = "KEY_MM_CONT_TYPE_KB"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonBack" type="Button" parent="controlsMenu"]
+margin_left = 320.0
+margin_top = 625.0
+margin_right = 960.0
+margin_bottom = 685.0
+theme = ExtResource( 4 )
+text = "KEY_MENU_BACK"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="controlsMenu"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1264.0
+margin_bottom = 608.0
+texture = ExtResource( 8 )
+draw_center = false
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="keyboardControls3" type="Label" parent="controlsMenu"]
+margin_left = 764.0
+margin_top = 26.0
+margin_right = 1189.0
+margin_bottom = 97.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 9 )
+text = "KEY_MM_CONT_VOL2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="keyboardControls4" type="Label" parent="controlsMenu"]
+margin_left = 369.0
+margin_top = 26.0
+margin_right = 754.0
+margin_bottom = 97.0
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 9 )
+text = "KEY_MM_CONT_VOL1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pad" type="Control" parent="controlsMenu"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controllerControls" type="Label" parent="controlsMenu/pad"]
+margin_left = 28.0
+margin_top = 212.0
+margin_right = 496.0
+margin_bottom = 468.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 7 )
+text = "KEY_MM_CONT_GP2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controllerControls3" type="Label" parent="controlsMenu/pad"]
+margin_left = 25.0
+margin_top = 266.0
+margin_right = 206.0
+margin_bottom = 421.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 7 )
+text = "KEY_MM_CONT_GP3"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controllerControls4" type="Label" parent="controlsMenu/pad"]
+margin_left = 302.0
+margin_top = 126.0
+margin_right = 974.0
+margin_bottom = 167.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 7 )
+text = "KEY_MM_CONT_GP1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="controllerControls2" type="Label" parent="controlsMenu/pad"]
+margin_left = 960.0
+margin_top = 196.0
+margin_right = 1340.0
+margin_bottom = 578.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 7 )
+text = "KEY_MM_CONT_GP4"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="pad" type="Sprite" parent="controlsMenu/pad"]
+position = Vector2( 640, 390 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+
+[node name="board" type="Control" parent="controlsMenu"]
+visible = false
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="board" type="Sprite" parent="controlsMenu/board"]
+position = Vector2( 640, 437 )
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+
+[node name="keyboardControls" type="Label" parent="controlsMenu/board"]
+margin_left = 81.0
+margin_top = 131.0
+margin_right = 603.0
+margin_bottom = 276.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 7 )
+text = "KEY_MM_CONT_KB1"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="keyboardControls2" type="Label" parent="controlsMenu/board"]
+margin_left = 657.0
+margin_top = 131.0
+margin_right = 1243.0
+margin_bottom = 276.0
+theme = ExtResource( 2 )
+custom_fonts/font = SubResource( 7 )
+text = "KEY_MM_CONT_KB2"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="creditsMenu" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dark" type="ColorRect" parent="creditsMenu"]
+margin_right = 1280.0
+margin_bottom = 720.0
+color = Color( 0, 0, 0, 0.745098 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="dark2" type="ColorRect" parent="creditsMenu"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1260.0
+margin_bottom = 600.0
+color = Color( 0.270588, 0.270588, 0.270588, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="buttonBack" type="Button" parent="creditsMenu"]
+margin_left = 320.0
+margin_top = 625.0
+margin_right = 960.0
+margin_bottom = 685.0
+theme = ExtResource( 4 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="board" type="Sprite" parent="creditsMenu"]
+position = Vector2( 967, 431 )
+scale = Vector2( 0.75, 0.75 )
+texture = ExtResource( 13 )
+
+[node name="dark3" type="ColorRect" parent="creditsMenu"]
+margin_left = 20.0
+margin_top = 20.0
+margin_right = 1260.0
+margin_bottom = 600.0
+color = Color( 0, 0, 0, 0.266667 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NinePatchRect" type="NinePatchRect" parent="creditsMenu"]
+margin_left = 16.0
+margin_top = 16.0
+margin_right = 1264.0
+margin_bottom = 608.0
+texture = ExtResource( 8 )
+draw_center = false
+patch_margin_left = 16
+patch_margin_top = 16
+patch_margin_right = 16
+patch_margin_bottom = 16
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="namesCredits" type="ScrollContainer" parent="creditsMenu"]
+margin_left = 26.0
+margin_top = 26.0
+margin_right = 1461.0
+margin_bottom = 598.0
+scroll_horizontal_enabled = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="names" type="VBoxContainer" parent="creditsMenu/namesCredits"]
+margin_right = 974.0
+margin_bottom = 3344.0
+rect_min_size = Vector2( 970, 572 )
+custom_constants/separation = 10
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HSeparator" type="HSeparator" parent="creditsMenu/namesCredits/names"]
+margin_right = 974.0
+margin_bottom = 4.0
+rect_min_size = Vector2( 970, 0 )
+
+[node name="HEAD DEV" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 14.0
+margin_right = 974.0
+margin_bottom = 74.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 10 )
+text = "KEY_MM_CRED_DEV"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 84.0
+margin_right = 974.0
+margin_bottom = 144.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "krizby"
+align = 1
+valign = 1
+
+[node name="VSpacer" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 154.0
+margin_right = 974.0
+margin_bottom = 214.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="2D ARTISTS" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 224.0
+margin_right = 974.0
+margin_bottom = 284.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 10 )
+text = "KEY_MM_CRED_2D"
+align = 1
+valign = 1
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 294.0
+margin_right = 974.0
+margin_bottom = 374.0
+rect_min_size = Vector2( 970, 80 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Robin Quinn"
+align = 1
+valign = 1
+
+[node name="2dList" type="HBoxContainer" parent="creditsMenu/namesCredits/names"]
+margin_top = 384.0
+margin_right = 974.0
+margin_bottom = 1084.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="creditsMenu/namesCredits/names/2dList"]
+margin_right = 485.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "alynalyze"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "ArticGalaxy"
+align = 1
+valign = 1
+
+[node name="name10" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 128.0
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "dennis 7486"
+align = 1
+valign = 1
+
+[node name="name11" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 192.0
+margin_right = 485.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "fishybros"
+align = 1
+valign = 1
+
+[node name="name4" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 256.0
+margin_right = 485.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Gaebolgs"
+align = 1
+valign = 1
+
+[node name="name5" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 320.0
+margin_right = 485.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "GUMI"
+align = 1
+valign = 1
+
+[node name="name6" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 384.0
+margin_right = 485.0
+margin_bottom = 444.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Leo_I_dont_know"
+align = 1
+valign = 1
+
+[node name="name12" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 448.0
+margin_right = 485.0
+margin_bottom = 508.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Monster Criminal"
+align = 1
+valign = 1
+
+[node name="name7" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 512.0
+margin_right = 485.0
+margin_bottom = 572.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "NightmareDarcy"
+align = 1
+valign = 1
+
+[node name="name8" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 576.0
+margin_right = 485.0
+margin_bottom = 636.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Pedro Diego Luna"
+align = 1
+valign = 1
+
+[node name="name9" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer"]
+margin_top = 640.0
+margin_right = 485.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Willow"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="creditsMenu/namesCredits/names/2dList"]
+margin_left = 489.0
+margin_right = 974.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Ari"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "callistis"
+align = 1
+valign = 1
+
+[node name="name10" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 128.0
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "DragonPlant2006"
+align = 1
+valign = 1
+
+[node name="name11" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 192.0
+margin_right = 485.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Gabolino"
+align = 1
+valign = 1
+
+[node name="name4" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 256.0
+margin_right = 485.0
+margin_bottom = 316.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Glub"
+align = 1
+valign = 1
+
+[node name="name5" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 320.0
+margin_right = 485.0
+margin_bottom = 380.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Jitro"
+align = 1
+valign = 1
+
+[node name="name6" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 384.0
+margin_right = 485.0
+margin_bottom = 444.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "la máquina azul"
+align = 1
+valign = 1
+
+[node name="name13" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 448.0
+margin_right = 485.0
+margin_bottom = 508.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Mullusion"
+align = 1
+valign = 1
+
+[node name="name9" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 512.0
+margin_right = 485.0
+margin_bottom = 572.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "OlegShalun"
+align = 1
+valign = 1
+
+[node name="name14" type="Label" parent="creditsMenu/namesCredits/names/2dList/VBoxContainer2"]
+margin_top = 576.0
+margin_right = 485.0
+margin_bottom = 636.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Radrappy"
+align = 1
+valign = 1
+
+[node name="VSpacer3" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 1094.0
+margin_right = 974.0
+margin_bottom = 1154.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="3D ARTISTS" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 1164.0
+margin_right = 974.0
+margin_bottom = 1224.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 10 )
+text = "KEY_MM_CRED_3D"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 1234.0
+margin_right = 974.0
+margin_bottom = 1314.0
+rect_min_size = Vector2( 970, 80 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Neofeng"
+align = 1
+valign = 1
+
+[node name="3DList" type="HBoxContainer" parent="creditsMenu/namesCredits/names"]
+margin_top = 1324.0
+margin_right = 974.0
+margin_bottom = 1512.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="creditsMenu/namesCredits/names/3DList"]
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/3DList/VBoxContainer"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Anarkhangel"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/3DList/VBoxContainer"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Dendral"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names/3DList/VBoxContainer"]
+margin_top = 128.0
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "juliculi_"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="creditsMenu/namesCredits/names/3DList"]
+margin_left = 489.0
+margin_right = 974.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/3DList/VBoxContainer2"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Anjinho01"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/3DList/VBoxContainer2"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Jelszie_is_I"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names/3DList/VBoxContainer2"]
+margin_top = 128.0
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = " "
+align = 1
+valign = 1
+
+[node name="VSpacer4" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 1522.0
+margin_right = 974.0
+margin_bottom = 1582.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="MUSICIANS" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 1592.0
+margin_right = 974.0
+margin_bottom = 1652.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 10 )
+text = "KEY_MM_CRED_SOUND"
+align = 1
+valign = 1
+
+[node name="name4" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 1662.0
+margin_right = 974.0
+margin_bottom = 1742.0
+rect_min_size = Vector2( 970, 80 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Marbelsoda"
+align = 1
+valign = 1
+
+[node name="MusicList" type="HBoxContainer" parent="creditsMenu/namesCredits/names"]
+margin_top = 1752.0
+margin_right = 974.0
+margin_bottom = 2004.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="creditsMenu/namesCredits/names/MusicList"]
+margin_right = 485.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/MusicList/VBoxContainer"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "DenWellingston"
+align = 1
+valign = 1
+
+[node name="name4" type="Label" parent="creditsMenu/namesCredits/names/MusicList/VBoxContainer"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "kiitzuna"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/MusicList/VBoxContainer"]
+margin_top = 128.0
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "pheron"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names/MusicList/VBoxContainer"]
+margin_top = 192.0
+margin_right = 485.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Tsuwami"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="creditsMenu/namesCredits/names/MusicList"]
+margin_left = 489.0
+margin_right = 974.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/MusicList/VBoxContainer2"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "kidartyaam"
+align = 1
+valign = 1
+
+[node name="name4" type="Label" parent="creditsMenu/namesCredits/names/MusicList/VBoxContainer2"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Myles B. Parker"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/MusicList/VBoxContainer2"]
+margin_top = 128.0
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "tempotastic"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names/MusicList/VBoxContainer2"]
+margin_top = 192.0
+margin_right = 485.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = " Vassamo"
+align = 1
+valign = 1
+
+[node name="VSpacer5" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 2014.0
+margin_right = 974.0
+margin_bottom = 2074.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="WRITERS" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 2084.0
+margin_right = 974.0
+margin_bottom = 2144.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 10 )
+text = "KEY_MM_CRED_WRIT"
+align = 1
+valign = 1
+
+[node name="name5" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 2154.0
+margin_right = 974.0
+margin_bottom = 2234.0
+rect_min_size = Vector2( 970, 80 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Raine Randolph"
+align = 1
+valign = 1
+
+[node name="WriterList" type="HBoxContainer" parent="creditsMenu/namesCredits/names"]
+margin_top = 2244.0
+margin_right = 974.0
+margin_bottom = 2368.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="creditsMenu/namesCredits/names/WriterList"]
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/WriterList/VBoxContainer"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Dawn"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/WriterList/VBoxContainer"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Sergio Arispe Julio"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="creditsMenu/namesCredits/names/WriterList"]
+margin_left = 489.0
+margin_right = 974.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/WriterList/VBoxContainer2"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "raidebaron"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/WriterList/VBoxContainer2"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "ShadowNX"
+align = 1
+valign = 1
+
+[node name="VSpacer6" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 2378.0
+margin_right = 974.0
+margin_bottom = 2438.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="SPECIALS" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 2448.0
+margin_right = 974.0
+margin_bottom = 2508.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 10 )
+text = "KEY_MM_CRED_SPEC"
+align = 1
+valign = 1
+
+[node name="SpecList" type="HBoxContainer" parent="creditsMenu/namesCredits/names"]
+margin_top = 2518.0
+margin_right = 974.0
+margin_bottom = 2770.0
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="creditsMenu/namesCredits/names/SpecList"]
+margin_right = 485.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/SpecList/VBoxContainer"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Adhe"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/SpecList/VBoxContainer"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "hepitagono"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names/SpecList/VBoxContainer"]
+margin_top = 128.0
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "mit"
+align = 1
+valign = 1
+
+[node name="name4" type="Label" parent="creditsMenu/namesCredits/names/SpecList/VBoxContainer"]
+margin_top = 192.0
+margin_right = 485.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Paulo Cazares"
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="creditsMenu/namesCredits/names/SpecList"]
+margin_left = 489.0
+margin_right = 974.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/SpecList/VBoxContainer2"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Mystery Ghost"
+align = 1
+valign = 1
+
+[node name="name2" type="Label" parent="creditsMenu/namesCredits/names/SpecList/VBoxContainer2"]
+margin_top = 64.0
+margin_right = 485.0
+margin_bottom = 124.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "MIComputerTech"
+align = 1
+valign = 1
+
+[node name="name3" type="Label" parent="creditsMenu/namesCredits/names/SpecList/VBoxContainer2"]
+margin_top = 128.0
+margin_right = 485.0
+margin_bottom = 188.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Nooz"
+align = 1
+valign = 1
+
+[node name="name4" type="Label" parent="creditsMenu/namesCredits/names/SpecList/VBoxContainer2"]
+margin_top = 192.0
+margin_right = 485.0
+margin_bottom = 252.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "PepperMint"
+align = 1
+valign = 1
+
+[node name="VSpacer7" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 2780.0
+margin_right = 974.0
+margin_bottom = 2840.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="SPECIALS2" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 2850.0
+margin_right = 974.0
+margin_bottom = 2910.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 5 )
+custom_fonts/font = SubResource( 10 )
+text = "KEY_MM_CRED_EXSPEC"
+align = 1
+valign = 1
+
+[node name="SpecList2" type="HBoxContainer" parent="creditsMenu/namesCredits/names"]
+margin_top = 2920.0
+margin_right = 974.0
+margin_bottom = 2980.0
+rect_min_size = Vector2( 970, 0 )
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="creditsMenu/namesCredits/names/SpecList2"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/SpecList2/VBoxContainer"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Matt B."
+align = 1
+valign = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="creditsMenu/namesCredits/names/SpecList2"]
+margin_left = 489.0
+margin_right = 974.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 0 )
+
+[node name="name1" type="Label" parent="creditsMenu/namesCredits/names/SpecList2/VBoxContainer2"]
+margin_right = 485.0
+margin_bottom = 60.0
+rect_min_size = Vector2( 485, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "Paul R."
+align = 1
+valign = 1
+
+[node name="name6" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 2990.0
+margin_right = 974.0
+margin_bottom = 3050.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "KEY_MM_CRED_CREW"
+align = 1
+valign = 1
+
+[node name="VSpacer2" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 3060.0
+margin_right = 974.0
+margin_bottom = 3120.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="VSpacer8" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 3130.0
+margin_right = 974.0
+margin_bottom = 3190.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="name7" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 3200.0
+margin_right = 974.0
+margin_bottom = 3260.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "KEY_MM_CRED_THNX"
+align = 1
+valign = 1
+
+[node name="VSpacer9" type="Label" parent="creditsMenu/namesCredits/names"]
+margin_top = 3270.0
+margin_right = 974.0
+margin_bottom = 3330.0
+rect_min_size = Vector2( 970, 60 )
+size_flags_vertical = 1
+theme = ExtResource( 2 )
+text = "   "
+align = 1
+valign = 1
+
+[node name="HSeparator2" type="HSeparator" parent="creditsMenu/namesCredits/names"]
+margin_top = 3340.0
+margin_right = 974.0
+margin_bottom = 3344.0
+rect_min_size = Vector2( 970, 0 )
+
+[node name="introAnim" type="AnimationPlayer" parent="."]
+autoplay = "intro"
+anims/idle = SubResource( 13 )
+anims/intro = SubResource( 12 )
+
+[node name="key" type="Node" parent="."]
+
+[connection signal="toggled" from="lockButton" to="." method="_on_lockButton_toggled"]
+[connection signal="toggled" from="hitboxButton" to="." method="_on_hitboxButton_toggled"]
+[connection signal="pressed" from="mainMenu/startButtonOld" to="." method="_on_startButton_pressed"]
+[connection signal="pressed" from="mainMenu/startButton" to="." method="_on_startButton_pressed"]
+[connection signal="pressed" from="mainMenu/controlsButton" to="." method="_on_controlsButton_pressed"]
+[connection signal="pressed" from="mainMenu/creditsButton" to="." method="_on_creditsButton_pressed"]
+[connection signal="pressed" from="mainMenu/exitButton" to="." method="_on_exitButton_pressed"]
+[connection signal="pressed" from="mainMenu/Button" to="." method="_on_languageButton_pressed"]
+[connection signal="pressed" from="controlsMenu/buttonBack" to="." method="_on_buttonBack_pressed"]
+[connection signal="pressed" from="creditsMenu/buttonBack" to="." method="_on_buttonBack_pressed"]
+[connection signal="animation_finished" from="introAnim" to="." method="_on_introAnim_animation_finished"]
