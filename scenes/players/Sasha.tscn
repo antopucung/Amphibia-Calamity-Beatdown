@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/players/lifeCounterFont.tres" type="DynamicFont" id=43]
 [ext_resource path="res://art/menus/hp_bar.png" type="Texture" id=44]
 
+
 [sub_resource type="Animation" id=18]
 resource_name = "attack_H1"
 length = 0.500001

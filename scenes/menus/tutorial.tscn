@@ -15,6 +15,7 @@
 [ext_resource path="res://scenes/menus/tutShadow.gd" type="Script" id=43]
 [ext_resource path="res://art/vfx/shadow.png" type="Texture" id=44]
 
+
 [sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 42 )
 region = Rect2( 0, 0, 68, 66 )
