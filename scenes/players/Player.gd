@@ -5,7 +5,7 @@ var projScene = preload("res://scenes/players/playerProj.tscn")
 
 var playerNum = 1
 
-var playerChar = "Anne"
+var playerChar = "Okka"
 
 var speed_walk = 10 #10
 var speed_run = 18 #18

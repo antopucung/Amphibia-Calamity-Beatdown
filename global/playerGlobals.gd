@@ -65,6 +65,7 @@ var hasSprig = true
 var hasMaggie = true
 var hasGrime = false
 var hasDarla = false
+var hasOkka = true
 var availableChars = ["Anne"]
 
 var clover = false
@@ -114,6 +115,8 @@ func recalcInfo():
 		availableChars.append("Maggie")
 	if hasDarla and clover:
 		availableChars.append("Darla")
+	if hasOkka or allCharsMode:
+		availableChars.append("Okka")
 	# inputs
 	checkAvailableInputs()
 

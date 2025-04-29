@@ -3955,34 +3955,34 @@ height = 1.2
 height = 0.1
 rings = 1
 
-[sub_resource type="AtlasTexture" id=54]
+[sub_resource type="AtlasTexture" id=128]
 flags = 4
 atlas = ExtResource( 39 )
-region = Rect2( 0, 700, 400, 350 )
+region = Rect2( 2000, 700, 400, 350 )
 
-[sub_resource type="AtlasTexture" id=53]
+[sub_resource type="AtlasTexture" id=129]
 flags = 4
 atlas = ExtResource( 39 )
-region = Rect2( 0, 0, 400, 350 )
+region = Rect2( 2000, 0, 400, 350 )
 
-[sub_resource type="AtlasTexture" id=55]
+[sub_resource type="AtlasTexture" id=130]
 flags = 4
 atlas = ExtResource( 39 )
-region = Rect2( 0, 350, 400, 350 )
+region = Rect2( 2000, 350, 400, 350 )
 
 [sub_resource type="SpriteFrames" id=52]
 animations = [ {
-"frames": [ SubResource( 54 ) ],
+"frames": [ SubResource( 128 ) ],
 "loop": false,
 "name": "hurt",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 53 ) ],
+"frames": [ SubResource( 129 ) ],
 "loop": false,
 "name": "idle",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 55 ) ],
+"frames": [ SubResource( 130 ) ],
 "loop": false,
 "name": "low",
 "speed": 1.0
@@ -3996,9 +3996,6 @@ script = ExtResource( 2 )
 [node name="Label" type="Label" parent="."]
 margin_right = 50.0
 margin_bottom = 14.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../zeroPoint")
@@ -4167,7 +4164,7 @@ margin_top = -7.0
 margin_right = 312.0
 margin_bottom = 23.0
 theme = ExtResource( 41 )
-text = "Anne"
+text = "Okka"
 align = 1
 valign = 1
 __meta__ = {
