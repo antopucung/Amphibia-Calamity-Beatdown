@@ -482,6 +482,7 @@ func _physics_process(delta):
 				clearInputBuffer()
 				nextState = A_H1
 			elif Input.is_action_pressed(block_button):
+				anim.play("block")
 				nextState = BLOCK
 			else:
 				nextState = IDLE
@@ -509,6 +510,7 @@ func _physics_process(delta):
 				clearInputBuffer()
 				nextState = A_H1
 			elif Input.is_action_just_pressed(block_button):
+				anim.play("block")
 				nextState = BLOCK
 			else:
 				nextState = WALK
@@ -887,6 +889,7 @@ func _physics_process(delta):
 			elif (Input.is_action_pressed(block_button) == false):
 				nextState = IDLE
 			elif (animFinished):
+				anim.play("block")
 				nextState = BLOCK
 				animFinished = false
 		COUNTER:
@@ -1394,8 +1397,8 @@ func _physics_process(delta):
 		anim.play("attack_slide_H")
 	elif isInState([WAVE]):
 		anim.play("wave")
-	elif isInState([BLOCK]):
-		anim.play("block")
+	#elif isInState([BLOCK]):
+	#	anim.play("block")
 	elif isInState([BLOCKHIT]):
 		anim.play("block_hit")
 	elif isInState([COUNTER]):
