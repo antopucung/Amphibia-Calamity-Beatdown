@@ -55,9 +55,9 @@ panorama = ExtResource( 14 )
 [sub_resource type="Environment" id=130]
 background_mode = 1
 background_sky = SubResource( 129 )
-background_sky_orientation = Basis( -1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1 )
-background_sky_rotation = Vector3( 0, 3.14159, 0 )
-background_sky_rotation_degrees = Vector3( 0, 180, 0 )
+background_sky_orientation = Basis( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1 )
+background_sky_rotation = Vector3( 0, -3.14159, 0 )
+background_sky_rotation_degrees = Vector3( 0, -180, 0 )
 background_color = Color( 0.54902, 0.858824, 0.839216, 1 )
 background_energy = 0.4
 ambient_light_color = Color( 1, 1, 1, 1 )
@@ -1051,6 +1051,46 @@ tracks/6/keys = {
 "values": [ 0.07 ]
 }
 
+[sub_resource type="AtlasTexture" id=83]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 132, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=84]
+atlas = ExtResource( 9 )
+region = Rect2( 68, 132, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=85]
+atlas = ExtResource( 9 )
+region = Rect2( 136, 132, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=86]
+atlas = ExtResource( 9 )
+region = Rect2( 204, 132, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=87]
+atlas = ExtResource( 9 )
+region = Rect2( 272, 132, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=88]
+atlas = ExtResource( 9 )
+region = Rect2( 340, 132, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=72]
+atlas = ExtResource( 9 )
+region = Rect2( 204, 330, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 330, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=89]
+atlas = ExtResource( 9 )
+region = Rect2( 68, 330, 68, 66 )
+
+[sub_resource type="AtlasTexture" id=73]
+atlas = ExtResource( 9 )
+region = Rect2( 136, 330, 68, 66 )
+
 [sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 68, 66 )
@@ -1074,14 +1114,6 @@ region = Rect2( 272, 0, 68, 66 )
 [sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 9 )
 region = Rect2( 340, 0, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=72]
-atlas = ExtResource( 9 )
-region = Rect2( 204, 330, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=73]
-atlas = ExtResource( 9 )
-region = Rect2( 136, 330, 68, 66 )
 
 [sub_resource type="AtlasTexture" id=75]
 atlas = ExtResource( 9 )
@@ -1115,43 +1147,11 @@ region = Rect2( 408, 66, 68, 66 )
 atlas = ExtResource( 9 )
 region = Rect2( 476, 66, 68, 66 )
 
-[sub_resource type="AtlasTexture" id=89]
-atlas = ExtResource( 9 )
-region = Rect2( 68, 330, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=74]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 330, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=83]
-atlas = ExtResource( 9 )
-region = Rect2( 0, 132, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=84]
-atlas = ExtResource( 9 )
-region = Rect2( 68, 132, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=85]
-atlas = ExtResource( 9 )
-region = Rect2( 136, 132, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=86]
-atlas = ExtResource( 9 )
-region = Rect2( 204, 132, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=87]
-atlas = ExtResource( 9 )
-region = Rect2( 272, 132, 68, 66 )
-
-[sub_resource type="AtlasTexture" id=88]
-atlas = ExtResource( 9 )
-region = Rect2( 340, 132, 68, 66 )
-
 [sub_resource type="SpriteFrames" id=145]
 animations = [ {
-"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
+"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ) ],
 "loop": false,
-"name": "idle",
+"name": "attack_heavy",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 72 ) ],
@@ -1159,14 +1159,9 @@ animations = [ {
 "name": "block",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 73 ) ],
+"frames": [ SubResource( 74 ) ],
 "loop": false,
-"name": "hurt_floor",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ) ],
-"loop": false,
-"name": "walk",
+"name": "hurt",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 89 ) ],
@@ -1174,14 +1169,19 @@ animations = [ {
 "name": "hurt_air",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 74 ) ],
+"frames": [ SubResource( 73 ) ],
 "loop": false,
-"name": "hurt",
+"name": "hurt_floor",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 83 ), SubResource( 84 ), SubResource( 85 ), SubResource( 86 ), SubResource( 87 ), SubResource( 88 ) ],
+"frames": [ SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ), SubResource( 70 ), SubResource( 71 ) ],
 "loop": false,
-"name": "attack_heavy",
+"name": "idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 75 ), SubResource( 76 ), SubResource( 77 ), SubResource( 140 ), SubResource( 141 ), SubResource( 142 ), SubResource( 143 ), SubResource( 144 ) ],
+"loop": false,
+"name": "walk",
 "speed": 5.0
 } ]
 
@@ -1189,8 +1189,8 @@ animations = [ {
 resource_local_to_scene = true
 
 [sub_resource type="CylinderShape" id=147]
-radius = 1.5
 height = 3.0
+radius = 1.5
 
 [sub_resource type="CapsuleShape" id=148]
 radius = 1.5
@@ -2927,19 +2927,19 @@ editor_only = true
 [node name="musicTrigger" parent="." instance=ExtResource( 26 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -200.977, 27.2674, -40.9207 )
 visible = false
+monitoring = false
 
 [node name="playerSpawner" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -201.409, 28.1987, -42.3755 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -226, 17, -42.375 )
 
 [node name="MeshInstance4" type="MeshInstance" parent="."]
-transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 308.311, 10.8205, 20.5694 )
+transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 295.773, 28.5935, 18.5103 )
 cast_shadow = 0
 mesh = SubResource( 59 )
 skeleton = NodePath("../Ground13")
-material/0 = null
 
 [node name="Ground" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5376, 15.773, -2.05907 )
 collision_layer = 2
 collision_mask = 0
 
@@ -2949,23 +2949,23 @@ shape = SubResource( 13 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground"]
 cast_shadow = 0
 mesh = SubResource( 33 )
-material/0 = null
 
 [node name="Ground7" type="StaticBody" parent="."]
-transform = Transform( 1, 1.12834e-05, -1.31015e-05, -1.12834e-05, 1, 2.37735e-06, 1.31015e-05, -2.37735e-06, 1, -32.8074, -0.0530405, 51.7222 )
+transform = Transform( 1, 1.12834e-05, -1.31015e-05, -1.12834e-05, 1, 2.37735e-06, 1.31015e-05, -2.37735e-06, 1, -45.345, 17.72, 49.6631 )
 collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground7"]
+transform = Transform( 1, -2.24095e-13, 0, -2.22097e-13, 1, 0, 0, 0, 1, 0, 0, 0 )
 shape = SubResource( 47 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground7"]
+transform = Transform( 1, -2.24095e-13, 0, -2.22097e-13, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 48 )
-material/0 = null
 
 [node name="Ground11" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 80.0163, -2.08823, 33.2467 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 67.4787, 15.6848, 31.1876 )
 collision_layer = 2
 collision_mask = 0
 
@@ -2975,10 +2975,9 @@ shape = SubResource( 50 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground11"]
 cast_shadow = 0
 mesh = SubResource( 51 )
-material/0 = null
 
 [node name="Ground12" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 86.9141, 4.99403, 35.2706 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 74.3765, 22.767, 33.2115 )
 collision_layer = 2
 collision_mask = 0
 
@@ -2988,10 +2987,9 @@ shape = SubResource( 52 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground12"]
 cast_shadow = 0
 mesh = SubResource( 53 )
-material/0 = null
 
 [node name="Ground9" type="StaticBody" parent="."]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.17829, -0.0530405, 51.8934 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.3593, 17.72, 49.8343 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3001,7 +2999,6 @@ shape = SubResource( 47 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground9"]
 cast_shadow = 0
 mesh = SubResource( 48 )
-material/0 = null
 
 [node name="CollisionShape2" type="CollisionShape" parent="Ground9"]
 transform = Transform( 0.98838, 0.152003, 0, -0.152003, 0.98838, 0, 0, 0, 1, 59.4707, -4.65687, 2.6226e-06 )
@@ -3012,10 +3009,9 @@ transform = Transform( 0.98838, 0.152003, -5.07921e-10, -0.152003, 0.98838, -6.6
 cast_shadow = 0
 mesh = SubResource( 48 )
 skeleton = NodePath("../MeshInstance")
-material/0 = null
 
 [node name="Ground2" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -78.891, -2, 0.0466042 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.4286, 15.773, -2.01246 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3027,10 +3023,9 @@ shape = SubResource( 78 )
 transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 79 )
-material/0 = null
 
 [node name="Ground15" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.6341, -0.184202, 69.9994 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.0965, 17.5888, 67.9403 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3042,10 +3037,9 @@ shape = SubResource( 13 )
 transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 33 )
-material/0 = null
 
 [node name="Ground18" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.601, 7.37534, 84.3265 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.063, 25.1483, 82.2674 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3057,10 +3051,9 @@ shape = SubResource( 13 )
 transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 33 )
-material/0 = null
 
 [node name="Ground19" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 160.601, 7.37534, 64.3265 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 148.063, 25.1483, 62.2674 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3072,10 +3065,9 @@ shape = SubResource( 13 )
 transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 33 )
-material/0 = null
 
 [node name="Ground20" type="StaticBody" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 159.811, 7.20275, 38.7188 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 147.273, 24.9757, 36.6597 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3087,10 +3079,9 @@ shape = SubResource( 13 )
 transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 33 )
-material/0 = null
 
 [node name="Ground16" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -24.9239, -0.184202, 90.3501 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -37.4615, 17.5888, 88.291 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3102,10 +3093,9 @@ shape = SubResource( 13 )
 transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 33 )
-material/0 = null
 
 [node name="Ground13" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 238.566, 15.816, 18.769 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 226.028, 33.589, 16.7099 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3117,10 +3107,9 @@ shape = SubResource( 56 )
 transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 57 )
-material/0 = null
 
 [node name="Ground14" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 375.815, 15.816, 19.5747 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 363.277, 33.589, 17.5156 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3132,25 +3121,23 @@ shape = SubResource( 56 )
 transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 57 )
-material/0 = null
 
 [node name="Ground5" type="StaticBody" parent="."]
-transform = Transform( -3.78552e-08, -2.18557e-08, -1, -0.5, 0.866025, 0, 0.866025, 0.5, -4.37114e-08, -2.06823, 12.7303, -34.5837 )
+transform = Transform( -3.78552e-08, -2.18557e-08, -1, -0.5, 0.866025, 0, 0.866025, 0.5, -4.37114e-08, -14.6059, 30.5033, -36.6428 )
 collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape" type="CollisionShape" parent="Ground5"]
-transform = Transform( 1, 0, 0, 0, 1, 0, -7.10543e-15, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, -1.42109e-14, 0, 1, 0, 0, 0 )
 shape = SubResource( 13 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ground5"]
-transform = Transform( 1, 5.96046e-08, 0, -5.96046e-08, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 2.98023e-08, 0, -2.98023e-08, 1, 0, -7.10543e-15, -1.77636e-15, 1, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 33 )
-material/0 = null
 
 [node name="Ground3" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -15.1062, 1.85059, -4.01539 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -27.6438, 19.6236, -6.07446 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3161,10 +3148,9 @@ shape = SubResource( 39 )
 transform = Transform( 3, 0, -1.19209e-07, 0, 3, 0, 1.19209e-07, 0, 3, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 40 )
-material/0 = null
 
 [node name="Ground4" type="StaticBody" parent="."]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -95.3742, -5.19097, 13.8277 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -107.912, 12.582, 11.7686 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3175,10 +3161,9 @@ shape = SubResource( 80 )
 transform = Transform( 1, 0, -3.97363e-08, 0, 1, 0, 3.97363e-08, 0, 1, -0.0169039, 0.00767994, -0.00749969 )
 cast_shadow = 0
 mesh = SubResource( 81 )
-material/0 = null
 
 [node name="Ground8" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 28.95, 1.85059, 25.0661 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4124, 19.6236, 23.007 )
 collision_layer = 2
 collision_mask = 2
 
@@ -3189,10 +3174,9 @@ shape = SubResource( 39 )
 transform = Transform( 3, 0, -1.19209e-07, 0, 3, 0, 1.19209e-07, 0, 3, 0, 0, 0 )
 cast_shadow = 0
 mesh = SubResource( 40 )
-material/0 = null
 
 [node name="Ground6" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9011, 1.02194, 3.00309 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -33.4387, 18.7949, 0.944023 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3202,10 +3186,9 @@ shape = SubResource( 6 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground6"]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.5, 1.5, 2 )
 mesh = SubResource( 37 )
-material/0 = null
 
 [node name="Ground10" type="StaticBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 77.8789, 1.02194, 31.3441 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 65.3413, 18.7949, 29.285 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3215,34 +3198,33 @@ shape = SubResource( 54 )
 [node name="MeshInstance" type="MeshInstance" parent="Ground10"]
 transform = Transform( 1, 0, 0, 0, -1, 8.74228e-08, 0, -8.74228e-08, -1, -0.5, 1.5, 4 )
 mesh = SubResource( 55 )
-material/0 = null
 
 [node name="rock5" parent="." instance=ExtResource( 53 )]
-transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -105.978, -0.999813, -5.07133 )
+transform = Transform( -8.74228e-08, 0, -2, 0, 2, 0, 2, 0, -8.74228e-08, -118.516, 16.7732, -7.1304 )
 
 [node name="rock2" parent="." instance=ExtResource( 54 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -78.7414, -0.999895, -5.30954 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -91.279, 16.7731, -7.36861 )
 
 [node name="rock3" parent="." instance=ExtResource( 52 )]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -86.9295, -0.999802, -4.97224 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, -99.4671, 16.7732, -7.03131 )
 
 [node name="rock4" parent="." instance=ExtResource( 51 )]
-transform = Transform( -1.35768, 0, 1.46857, 0, 2, 0, -1.46857, 0, -1.35768, -95.5384, -0.999783, -5.29117 )
+transform = Transform( -1.35768, 0, 1.46857, 0, 2, 0, -1.46857, 0, -1.35768, -108.076, 16.7732, -7.35024 )
 
 [node name="rock6" parent="." instance=ExtResource( 53 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -105.978, -0.999813, 5.30677 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -118.516, 16.7732, 3.2477 )
 
 [node name="rock7" parent="." instance=ExtResource( 54 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -78.7414, -0.999895, 5.06857 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -91.279, 16.7731, 3.0095 )
 
 [node name="rock8" parent="." instance=ExtResource( 52 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -86.9295, -0.999802, 5.40586 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -99.4671, 16.7732, 3.34679 )
 
 [node name="rock9" parent="." instance=ExtResource( 51 )]
-transform = Transform( -0.678839, 0, 0.734287, 0, 1, 0, -0.734287, 0, -0.678839, -95.5384, -0.999783, 5.08694 )
+transform = Transform( -0.678839, 0, 0.734287, 0, 1, 0, -0.734287, 0, -0.678839, -108.076, 16.7732, 3.02787 )
 
 [node name="ground example" type="StaticBody" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.75, 0, 0, 0, 0.5, 8.06151, 1.95073, 13.825 )
+transform = Transform( 0.5, 0, 0, 0, 0.75, 0, 0, 0, 0.5, -4.47612, 19.7237, 11.7659 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3277,7 +3259,7 @@ collision_mask = 0
 shape = SubResource( 12 )
 
 [node name="Moving Plat" type="KinematicBody" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50, 5, 20 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 37.4624, 22.773, 17.9409 )
 collision_layer = 2
 collision_mask = 0
 
@@ -3287,7 +3269,6 @@ shape = SubResource( 4 )
 [node name="MeshInstance" type="MeshInstance" parent="Moving Plat"]
 transform = Transform( 1, 0, -3.97363e-08, 0, 1, 0, 3.97363e-08, 0, 1, 0, 0, 0 )
 mesh = SubResource( 35 )
-material/0 = null
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Moving Plat"]
 autoplay = "move"
@@ -3295,38 +3276,38 @@ playback_process_mode = 0
 anims/move = SubResource( 38 )
 
 [node name="Mushroom" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -26.6571, -11.3432, -4.36643 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -39.1947, 6.42979, -6.4255 )
 
 [node name="Mushroom2" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 176.234, 3.19491, 9.72976 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 163.696, 20.9679, 7.67069 )
 bounceHeight = 25
 
 [node name="Mushroom4" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 184.051, 8.43058, 10.3882 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 171.513, 26.2036, 8.32913 )
 bounceHeight = 45
 
 [node name="Mushroom6" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 193.375, 4.70371, 11.0651 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 180.837, 22.4767, 9.00603 )
 
 [node name="Mushroom3" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 186.116, -1.12459, 15.9201 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 173.578, 16.6484, 13.861 )
 bounceHeight = 48
 
 [node name="Mushroom5" parent="." instance=ExtResource( 8 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 178.868, 5.99283, 15.6287 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 166.33, 23.7658, 13.5696 )
 bounceHeight = 45
 
 [node name="arrow launcher" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7831, 1.79974, 48.3337 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.3207, 19.5727, 46.2746 )
 
 [node name="arrow launcher3" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.7358, 3.39681, 48.0353 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.2734, 21.1698, 45.9762 )
 
 [node name="arrow launcher4" parent="." instance=ExtResource( 7 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.9168, 5.17171, 55.1459 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.4544, 22.9447, 53.0868 )
 
 [node name="switch2" parent="." instance=ExtResource( 5 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 22.2337, 1.04203, 25.4546 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 9.69607, 18.815, 23.3955 )
 
 [node name="bridge" type="KinematicBody" parent="switch2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9471, -1.21596, 2.56488 )
@@ -3346,9 +3327,9 @@ shape = SubResource( 44 )
 [node name="MeshInstance" type="MeshInstance" parent="switch2/bridge"]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, -9.53674e-07, 0 )
 mesh = SubResource( 46 )
-material/0 = null
 
 [node name="enemies" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -12.5376, 17.773, -2.05907 )
 
 [node name="enemySpawnPoint" parent="enemies" instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 135.52, 10.8931, 61.727 )
@@ -3634,7 +3615,6 @@ shape = SubResource( 148 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 cast_shadow = 3
 mesh = SubResource( 149 )
-material/0 = null
 
 [node name="aggro" type="Area" parent="enemies/greenMantis"]
 collision_layer = 0
@@ -3713,7 +3693,6 @@ shape = SubResource( 148 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 cast_shadow = 3
 mesh = SubResource( 149 )
-material/0 = null
 
 [node name="aggro" type="Area" parent="enemies/greenMantis3"]
 collision_layer = 0
@@ -3792,7 +3771,6 @@ shape = SubResource( 148 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 cast_shadow = 3
 mesh = SubResource( 149 )
-material/0 = null
 
 [node name="aggro" type="Area" parent="enemies/greenMantis2"]
 collision_layer = 0
@@ -3811,277 +3789,274 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0 )
 shape = SubResource( 151 )
 
 [node name="mush" parent="." instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 92.3059, 11.9459, 13.6862 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 79.7683, 29.7189, 11.6271 )
 
 [node name="mush3" parent="." instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 28.8971, 6.20094, 24.8784 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 16.3595, 23.9739, 22.8193 )
 
 [node name="mush2" parent="." instance=ExtResource( 2 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.771125, 2.27046, 67.9042 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.7665, 20.0435, 65.8451 )
 
 [node name="mush4" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -56.2456, 1.44654, 51.7149 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -68.7832, 19.2195, 49.6558 )
 
 [node name="mush6" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 266.141, 17.6192, 18.344 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 253.603, 35.3922, 16.2849 )
 
 [node name="mush5" parent="." instance=ExtResource( 4 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 86.905, -0.0447415, 33.6712 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 74.3674, 17.7283, 31.6121 )
 
 [node name="MeshInstance" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -35.7354, 3.24048, 48.2193 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -48.273, 21.0135, 46.1602 )
 mesh = SubResource( 49 )
-material/0 = null
 
 [node name="MeshInstance3" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -32.8382, 3.24048, 55.1425 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -45.3758, 21.0135, 53.0834 )
 mesh = SubResource( 49 )
-material/0 = null
 
 [node name="MeshInstance2" type="MeshInstance" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -29.74, 3.24048, 48.2193 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -42.2776, 21.0135, 46.1602 )
 mesh = SubResource( 49 )
-material/0 = null
 
 [node name="ambush" parent="." instance=ExtResource( 3 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 238.773, 17.3924, 18.9216 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 226.235, 35.1654, 16.8625 )
 
 [node name="ambush2" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -503.365, 17.3924, -21.7859 )
 ambushName = "playgroundAmbush2"
 
 [node name="lilypad" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 274.766, 16.2402, 8.59316 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 262.228, 34.0132, 6.53409 )
 
 [node name="lilypad6" parent="." instance=ExtResource( 16 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 339.73, 16.2402, 22.468 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 327.192, 34.0132, 20.4089 )
 
 [node name="lilypad4" parent="." instance=ExtResource( 16 )]
-transform = Transform( -0.852056, 0, 0.523451, 0, 1, 0, -0.523451, 0, -0.852056, 280.807, 16.2402, 19.7078 )
+transform = Transform( -0.852056, 0, 0.523451, 0, 1, 0, -0.523451, 0, -0.852056, 268.269, 34.0132, 17.6487 )
 
 [node name="lilypad5" parent="." instance=ExtResource( 16 )]
-transform = Transform( -0.852056, 0, 0.523451, 0, 1, 0, -0.523451, 0, -0.852056, 333.59, 16.2402, 13.7433 )
+transform = Transform( -0.852056, 0, 0.523451, 0, 1, 0, -0.523451, 0, -0.852056, 321.052, 34.0132, 11.6842 )
 
 [node name="lilypad2" parent="." instance=ExtResource( 16 )]
-transform = Transform( -0.139911, 0, -0.265377, 0, 0.3, 0, 0.265377, 0, -0.139911, 278.796, 16.0442, 26.0055 )
+transform = Transform( -0.139911, 0, -0.265377, 0, 0.3, 0, 0.265377, 0, -0.139911, 266.258, 33.8172, 23.9464 )
 
 [node name="lilypad3" parent="." instance=ExtResource( 16 )]
-transform = Transform( 0.29775, 0, 0.0366699, 0, 0.3, 0, -0.0366699, 0, 0.29775, 273.318, 16.2402, 23.5275 )
+transform = Transform( 0.29775, 0, 0.0366699, 0, 0.3, 0, -0.0366699, 0, 0.29775, 260.78, 34.0132, 21.4684 )
 
 [node name="watersnake" parent="." instance=ExtResource( 17 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 305.4, 16.0291, 16.8501 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 292.862, 33.8021, 14.791 )
 
 [node name="goal" parent="." instance=ExtResource( 19 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 374.246, 18.1743, 21.3355 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 361.708, 35.9473, 19.2764 )
 
 [node name="coin10" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.1865, 5.497, 28.2055 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 4.64887, 23.27, 26.1464 )
 gravOff = true
 
 [node name="coin11" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.1865, 5.49658, 28.2055 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.648871, 23.2696, 26.1464 )
 value = 5
 gravOff = true
 
 [node name="coin12" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 13.1865, 11.4966, 28.2055 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.648871, 29.2696, 26.1464 )
 value = 999
 gravOff = true
 
 [node name="coin13" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.1865, 5.49658, 28.2055 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.35113, 23.2696, 26.1464 )
 value = 20
 gravOff = true
 
 [node name="coin14" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 393.522, 19.5039, 26.6872 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 380.984, 37.2769, 24.6281 )
 gravOff = true
 
 [node name="coin15" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 389.522, 19.5034, 26.6872 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 376.984, 37.2764, 24.6281 )
 value = 5
 gravOff = true
 
 [node name="coin16" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 389.522, 25.5035, 26.6872 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 376.984, 43.2765, 24.6281 )
 value = 300
 gravOff = true
 
 [node name="coin18" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 386.075, 25.5035, 26.6872 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 373.537, 43.2765, 24.6281 )
 value = 300
 gravOff = true
 
 [node name="coin17" parent="." instance=ExtResource( 22 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 385.522, 19.5034, 26.6872 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 372.984, 37.2764, 24.6281 )
 value = 20
 gravOff = true
 
 [node name="spiderNest" parent="." instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.459, 1.2772, 70.9304 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 7.92137, 19.0502, 68.8713 )
 
 [node name="spiderNest2" parent="." instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 50.9577, 1.2772, 74.3869 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 38.4201, 19.0502, 72.3278 )
 
 [node name="spiderNest3" parent="." instance=ExtResource( 20 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.6333, 1.2772, 66.5285 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 43.0957, 19.0502, 64.4694 )
 
 [node name="spiderNest4" parent="." instance=ExtResource( 20 )]
-transform = Transform( 0.989435, 0, 0.144978, 0, 1, 0, -0.144978, 0, 0.989435, 149.309, 9.01314, 16.5526 )
+transform = Transform( 0.989435, 0, 0.144978, 0, 1, 0, -0.144978, 0, 0.989435, 136.771, 26.7861, 14.4935 )
 maxSpawns = 24
 
 [node name="waspNest" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.999733, 0, 0.0231236, 0, 1, 0, -0.0231236, 0, 0.999733, -46.2964, 6.64511, 89.9029 )
+transform = Transform( 0.999733, 0, 0.0231236, 0, 1, 0, -0.0231236, 0, 0.999733, -58.834, 24.4181, 87.8438 )
 
 [node name="waspNest3" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.841596, 0, -0.540108, 0, 1, 0, 0.540108, 0, 0.841596, -50.5006, 4.88458, 90.0579 )
+transform = Transform( 0.841596, 0, -0.540108, 0, 1, 0, 0.540108, 0, 0.841596, -63.0382, 22.6576, 87.9988 )
 
 [node name="swampTreeA" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.735543, 0, -1.01068, 0, 1.25, 0, 1.01068, 0, 0.735543, -49.0255, 0, 86.7841 )
+transform = Transform( 0.735543, 0, -1.01068, 0, 1.25, 0, 1.01068, 0, 0.735543, -61.5631, 17.773, 84.725 )
 
 [node name="swampTreeA3" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.735543, 0, -1.01068, 0, 1.25, 0, 1.01068, 0, 0.735543, -62.7709, -1.03047, -3.54898 )
+transform = Transform( 0.735543, 0, -1.01068, 0, 1.25, 0, 1.01068, 0, 0.735543, -75.3085, 16.7425, -5.60805 )
 
 [node name="swampTreeA5" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.123889, 0, 1.24384, 0, 1.25, 0, -1.24384, 0, 0.123889, -43.4843, -1.03047, -4.45013 )
+transform = Transform( 0.123889, 0, 1.24384, 0, 1.25, 0, -1.24384, 0, 0.123889, -56.0219, 16.7425, -6.5092 )
 
 [node name="swampTreeA4" parent="." instance=ExtResource( 21 )]
-transform = Transform( -1.36903, 0, -0.292845, 0, 1.4, 0, 0.292845, 0, -1.36903, -55.3701, -0.547534, -5.825 )
+transform = Transform( -1.36903, 0, -0.292845, 0, 1.4, 0, 0.292845, 0, -1.36903, -67.9077, 17.2255, -7.88407 )
 
 [node name="waspNest2" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.846342, 0, -0.53264, 0, 1, 0, 0.53264, 0, 0.846342, -15.6795, 6.23923, 87.0631 )
+transform = Transform( 0.846342, 0, -0.53264, 0, 1, 0, 0.53264, 0, 0.846342, -28.2171, 24.0122, 85.004 )
 
 [node name="swampTreeA2" parent="." instance=ExtResource( 21 )]
-transform = Transform( -0.277531, 0, 1.2188, 0, 1.25, 0, -1.2188, 0, -0.277531, -16.1218, 0, 84.5261 )
+transform = Transform( -0.277531, 0, 1.2188, 0, 1.25, 0, -1.2188, 0, -0.277531, -28.6594, 17.773, 82.467 )
 
 [node name="waspNest4" parent="." instance=ExtResource( 15 )]
-transform = Transform( 0.994157, 0, -0.107947, 0, 1, 0, 0.107947, 0, 0.994157, 59.5191, 15.0704, 12.7338 )
+transform = Transform( 0.994157, 0, -0.107947, 0, 1, 0, 0.107947, 0, 0.994157, 46.9815, 32.8434, 10.6747 )
 hp = 1
 oddsSpawn = 0.0
 maxCoins = 19
 minCoins = 18
 
 [node name="swampTreeA6" parent="." instance=ExtResource( 21 )]
-transform = Transform( -0.783509, 0, 0.973966, 0, 1.25, 0, -0.973966, 0, -0.783509, 58.0099, 8.83117, 10.6471 )
+transform = Transform( -0.783509, 0, 0.973966, 0, 1.25, 0, -0.973966, 0, -0.783509, 45.4723, 26.6042, 8.58803 )
 
 [node name="swampTreeA7" parent="." instance=ExtResource( 21 )]
-transform = Transform( 1.49874, 0, -0.0615054, 0, 1.5, 0, 0.0615054, 0, 1.49874, 144.486, 6.44354, 12.2055 )
+transform = Transform( 1.49874, 0, -0.0615054, 0, 1.5, 0, 0.0615054, 0, 1.49874, 131.948, 24.2165, 10.1464 )
 
 [node name="swampTreeA11" parent="." instance=ExtResource( 21 )]
-transform = Transform( -0.991465, 0, 0.13037, 0, 1, 0, -0.13037, 0, -0.991465, 159.641, 16.6863, 13.027 )
+transform = Transform( -0.991465, 0, 0.13037, 0, 1, 0, -0.13037, 0, -0.991465, 147.103, 34.4593, 10.9679 )
 
 [node name="swampTreeA8" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.546291, 0, 1.39698, 0, 1.5, 0, -1.39698, 0, 0.546291, 149.966, 8.59738, 11.1048 )
+transform = Transform( 0.546291, 0, 1.39698, 0, 1.5, 0, -1.39698, 0, 0.546291, 137.428, 26.3704, 9.04573 )
 
 [node name="swampTreeA9" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.546291, 0, 1.39698, 0, 1.5, 0, -1.39698, 0, 0.546291, 154.93, -0.482179, 15.3247 )
+transform = Transform( 0.546291, 0, 1.39698, 0, 1.5, 0, -1.39698, 0, 0.546291, 142.392, 17.2908, 13.2656 )
 
 [node name="swampTreeA10" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.364194, 0, 0.931323, 0, 1, 0, -0.931323, 0, 0.364194, 141.153, 2.5858, 20.2676 )
+transform = Transform( 0.364194, 0, 0.931323, 0, 1, 0, -0.931323, 0, 0.364194, 128.615, 20.3588, 18.2085 )
 
 [node name="swampTreeA12" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.685615, 0, 0.727964, 0, 1, 0, -0.727964, 0, 0.685615, 159.196, 2.5858, 27.5659 )
+transform = Transform( 0.685615, 0, 0.727964, 0, 1, 0, -0.727964, 0, 0.685615, 146.658, 20.3588, 25.5068 )
 
 [node name="windbox" parent="." instance=ExtResource( 46 )]
-transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 10, 41.0975, 0.874093, 21.7699 )
+transform = Transform( 5, 0, 0, 0, 0.5, 0, 0, 0, 10, 28.5599, 18.6471, 19.7108 )
 direction = Vector3( 0, 0, 1 )
 magnitude = 8
 
 [node name="warps" type="Spatial" parent="."]
 
 [node name="warp0" parent="warps" instance=ExtResource( 48 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -120.2, 0.315853, -0.475311 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -225.39, 18.088, -1.7329 )
 
 [node name="warpExit0" parent="warps" instance=ExtResource( 47 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -356.515, 16.9929, -4.37665 )
 
 [node name="barrelClosed" parent="." instance=ExtResource( 49 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 33.2514, 1.04203, 8.68475 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 20.7138, 18.815, 6.62568 )
 
 [node name="barrelClosed2" parent="." instance=ExtResource( 49 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.2118, 1.04203, 10.9859 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 21.6742, 18.815, 8.92683 )
 
 [node name="barrelClosed3" parent="." instance=ExtResource( 49 )]
-transform = Transform( 0.975404, 0, 0.220425, 0, 1, 0, -0.220425, 0, 0.975404, 33.2608, 3.25626, 8.65467 )
+transform = Transform( 0.975404, 0, 0.220425, 0, 1, 0, -0.220425, 0, 0.975404, 20.7232, 21.0293, 6.5956 )
 
 [node name="barrelOpen2" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60.0833, 1.04203, 26.7228 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47.5457, 18.815, 24.6637 )
 
 [node name="barrelOpen3" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 62.8969, 1.04203, 24.9787 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50.3593, 18.815, 22.9196 )
 
 [node name="barrelOpen4" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 62.8333, 1.04203, 28.4933 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 50.2957, 18.815, 26.4342 )
 
 [node name="barrelOpen7" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 67.8328, 1.04203, 25.6484 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55.2952, 18.815, 23.5893 )
 
 [node name="barrelOpen9" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 65.4384, 1.04203, 27.6422 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 52.9008, 18.815, 25.5831 )
 
 [node name="barrelOpen12" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 65.3991, 1.04203, 30.4057 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 52.8615, 18.815, 28.3466 )
 
 [node name="barrelOpen13" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60.3264, 8.6242, 29.4646 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47.7888, 26.3972, 27.4055 )
 
 [node name="barrelOpen8" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 68.0134, 1.04203, 28.4343 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 55.4758, 18.815, 26.3752 )
 
 [node name="barrelOpen5" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 57.2374, 1.04203, 27.8817 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 44.6998, 18.815, 25.8226 )
 
 [node name="barrelOpen10" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 61.7331, 4.29319, 29.3853 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 49.1955, 22.0662, 27.3262 )
 
 [node name="barrelOpen11" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 66.5894, 4.46353, 27.8286 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 54.0518, 22.2365, 25.7695 )
 
 [node name="barrelOpen6" parent="." instance=ExtResource( 50 )]
-transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 60.387, 1.04203, 29.8849 )
+transform = Transform( -4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 47.8494, 18.815, 27.8258 )
 
 [node name="mushPurple2" parent="." instance=ExtResource( 55 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -89.1843, -2.19097, 13.2167 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -101.722, 15.582, 11.1576 )
 
 [node name="PlantB" parent="." instance=ExtResource( 64 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -99.726, -2.19097, 17.379 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -112.264, 15.582, 15.3199 )
 
 [node name="PlantA" parent="." instance=ExtResource( 63 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -103.183, -2.19097, 17.254 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -115.721, 15.582, 15.1949 )
 
 [node name="mushGreen" parent="." instance=ExtResource( 57 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -102.179, -2.19095, 14.1153 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -114.717, 15.582, 12.0562 )
 
 [node name="mushPurple" parent="." instance=ExtResource( 56 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -98.9729, -2.19097, 13.3357 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -111.511, 15.582, 11.2766 )
 
 [node name="mushPink" parent="." instance=ExtResource( 58 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -99.7905, -1.86394, 9.92546 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -112.328, 15.9091, 7.86639 )
 
 [node name="mushOrange" parent="." instance=ExtResource( 59 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -101.777, -1.84009, 9.88689 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -114.315, 15.9329, 7.82782 )
 
 [node name="mushBlue" parent="." instance=ExtResource( 60 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -103.931, -1.87101, 10.0446 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -116.469, 15.902, 7.98553 )
 
 [node name="swampTreeA13" parent="." instance=ExtResource( 21 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 74.4285, 8.69203, 9.4137 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 61.8909, 26.465, 7.35463 )
 preset = 1
 
 [node name="swampTreeB" parent="." instance=ExtResource( 61 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 82.4894, 8.54822, 9.9472 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 69.9518, 26.3212, 7.88813 )
 preset = 2
 
 [node name="swampTreeD" parent="." instance=ExtResource( 62 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 101.023, 8.66798, 9.4798 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 88.4854, 26.441, 7.42073 )
 preset = 3
 
 [node name="swampTreeC" parent="." instance=ExtResource( 65 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 92.3871, 9.52951, 8.9466 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 79.8495, 27.3025, 6.88753 )
 preset = 4
 
 [node name="dialogueTrigger" parent="." instance=ExtResource( 66 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 204.963, 9.45799, 23.3454 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 192.425, 27.231, 21.2863 )
 
 [node name="enemySpawnPoint54" parent="." instance=ExtResource( 23 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -311.773, 17.9179, -2.89218 )
@@ -4120,114 +4095,95 @@ shape = SubResource( 170 )
 [node name="Bridge_Extreme" type="MeshInstance" parent="trailer"]
 transform = Transform( -1.74846e-07, 0, -3.45, 0, 3.45, 0, 4, 0, -1.50804e-07, 68.7321, 42.963, -27.5105 )
 mesh = SubResource( 171 )
-material/0 = null
 
 [node name="Bridge_Extreme2" type="MeshInstance" parent="trailer/Bridge_Extreme"]
 transform = Transform( -1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -9.53674e-07, 0, -7.97563 )
 mesh = SubResource( 171 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid2" type="MeshInstance" parent="trailer/Bridge_Extreme"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000115871, 4.76837e-06, -1.98854 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid3" type="MeshInstance" parent="trailer/Bridge_Extreme"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000115871, 4.76837e-06, -3.98233 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Extreme2" type="MeshInstance" parent="trailer"]
 transform = Transform( -1.74846e-07, 0, -3.45, 0, 3.45, 0, 4, 0, -1.50804e-07, 65.6737, 41.4454, -8.47258 )
 mesh = SubResource( 171 )
-material/0 = null
 
 [node name="Bridge_Mid2" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000115871, 4.76837e-06, -1.98854 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid3" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000115871, 4.76837e-06, -3.98233 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid4" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 1.77636e-14, 0, 1, 0, 0, 0, 1, -0.00011605, 5.24521e-06, -5.96205 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid5" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 1.77636e-14, 0, 1, 0, 0, 0, 1, -0.000115991, 5.24521e-06, -7.95584 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid6" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 1.77636e-14, 0, 1, 0, 0, 0, 1, -0.000116408, 5.24521e-06, -9.93159 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid7" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 1.77636e-14, 0, 1, 0, 0, 0, 1, -0.000116169, 5.24521e-06, -11.9254 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid8" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 3.19744e-14, 0, 1, 0, 0, 0, 1, -0.000116348, 5.24521e-06, -13.9051 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid9" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 3.19744e-14, 0, 1, 0, 0, 0, 1, -0.000116289, 5.24521e-06, -15.8989 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid10" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 4.61853e-14, 0, 1, 0, 0, 0, 1, -6.58582, 0.500721, -20.7762 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid11" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 6.03961e-14, 0, 1, 0, 0, 0, 1, -6.58582, 0.500721, -22.7559 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid12" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 6.03961e-14, 0, 1, 0, 0, 0, 1, -6.58582, 0.500721, -24.7497 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid13" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 6.03961e-14, 0, 1, 0, 0, 0, 1, -6.58582, 0.500721, -26.7254 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid14" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 6.03961e-14, 0, 1, 0, 0, 0, 1, -6.58582, 0.500721, -28.7192 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Bridge_Mid15" type="MeshInstance" parent="trailer/Bridge_Extreme2"]
 transform = Transform( 1, 0, 7.4607e-14, 0, 1, 0, 0, 0, 1, -6.58582, 0.500721, -30.6989 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="Ground17" type="StaticBody" parent="trailer"]
 transform = Transform( 1, 1.12834e-05, -1.31015e-05, -1.12834e-05, 1, 2.37735e-06, 1.31015e-05, -2.37735e-06, 1, 95.543, 41.2201, -8.65897 )
@@ -4241,7 +4197,6 @@ shape = SubResource( 47 )
 visible = false
 cast_shadow = 0
 mesh = SubResource( 48 )
-material/0 = null
 
 [node name="Ground18" type="StaticBody" parent="trailer"]
 transform = Transform( 1, 1.12834e-05, -1.31015e-05, -1.12834e-05, 1, 2.37735e-06, 1.31015e-05, -2.37735e-06, 1, 94.967, 42.6664, -27.5064 )
@@ -4255,7 +4210,6 @@ shape = SubResource( 47 )
 visible = false
 cast_shadow = 0
 mesh = SubResource( 48 )
-material/0 = null
 
 [node name="Ground19" type="StaticBody" parent="trailer"]
 transform = Transform( 1, 1.12834e-05, -1.31015e-05, -1.12834e-05, 1, 2.37735e-06, 1.31015e-05, -2.37735e-06, 1, 148.765, 42.9542, -34.8634 )
@@ -4269,18 +4223,15 @@ shape = SubResource( 47 )
 visible = false
 cast_shadow = 0
 mesh = SubResource( 48 )
-material/0 = null
 
 [node name="Bridge_Extreme3" type="MeshInstance" parent="trailer"]
 transform = Transform( -1.74846e-07, 0, -3.45, 0, 3.45, 0, 4, 0, -1.50804e-07, 123.717, 43.2645, -34.7048 )
 mesh = SubResource( 171 )
-material/0 = null
 
 [node name="Bridge_Mid2" type="MeshInstance" parent="trailer/Bridge_Extreme3"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000115871, 4.76837e-06, -1.98854 )
 mesh = SubResource( 172 )
 skeleton = NodePath("../..")
-material/0 = null
 
 [node name="mushPurple3" parent="trailer" instance=ExtResource( 56 )]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 57.292, 43.4279, -23.7105 )
@@ -4303,102 +4254,83 @@ transform = Transform( 1.5, 0, 0, 0, 1.75, 0, 0, 0, 1.5, 42.8746, 40.4165, -9.35
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 184.126, 36.9662, -9.8908 )
 mesh = SubResource( 173 )
 skeleton = NodePath("../Fence2_1_Part")
-material/0 = null
 
 [node name="Fence2_2" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 199.305, 36.9662, -9.8908 )
 mesh = SubResource( 173 )
 skeleton = NodePath("../Fence2_1_Part")
-material/0 = null
 
 [node name="Fence2_1_Part" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 203.7, 36.9662, -9.8908 )
 mesh = SubResource( 174 )
-material/0 = null
 
 [node name="Fence2_3_Part" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 194.823, 36.9662, -9.88263 )
 mesh = SubResource( 175 )
-material/0 = null
 
 [node name="Fence2_2_Part" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 188.629, 36.9662, -9.8908 )
 mesh = SubResource( 176 )
-material/0 = null
 
 [node name="Fence2_2_Part7" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 228.175, 41.9662, -39.7544 )
 mesh = SubResource( 176 )
-material/0 = null
 
 [node name="Fence2_2_Part2" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( 2.62268e-07, 0, -2, 0, 2, 0, 2, 0, 2.62268e-07, 207.683, 36.9662, -9.86434 )
 mesh = SubResource( 176 )
-material/0 = null
 
 [node name="Fence2_3" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 212.081, 36.9662, -9.8908 )
 mesh = SubResource( 173 )
 skeleton = NodePath("../Fence2_1_Part")
-material/0 = null
 
 [node name="Fence2_4" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 227.26, 36.9662, -9.8908 )
 mesh = SubResource( 173 )
 skeleton = NodePath("../Fence2_1_Part")
-material/0 = null
 
 [node name="Fence2_1_Part2" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 231.656, 36.9662, -9.8908 )
 mesh = SubResource( 174 )
-material/0 = null
 
 [node name="Fence2_3_Part2" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 222.778, 36.9662, -9.88263 )
 mesh = SubResource( 175 )
-material/0 = null
 
 [node name="Fence2_2_Part3" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 216.584, 36.9662, -9.8908 )
 mesh = SubResource( 176 )
-material/0 = null
 
 [node name="Fence2_2_Part4" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( 2.62268e-07, 0, -2, 0, 2, 0, 2, 0, 2.62268e-07, 235.638, 36.9662, -9.86434 )
 mesh = SubResource( 176 )
-material/0 = null
 
 [node name="Fence2_5" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 240.127, 36.9662, -9.8908 )
 mesh = SubResource( 173 )
 skeleton = NodePath("../Fence2_1_Part")
-material/0 = null
 
 [node name="Fence2_6" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 255.306, 36.9662, -9.8908 )
 mesh = SubResource( 173 )
 skeleton = NodePath("../Fence2_1_Part")
-material/0 = null
 
 [node name="Fence2_1_Part3" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 259.702, 36.9662, -9.8908 )
 mesh = SubResource( 174 )
-material/0 = null
 
 [node name="Fence2_3_Part3" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 250.824, 36.9662, -9.88263 )
 mesh = SubResource( 175 )
-material/0 = null
 
 [node name="Fence2_2_Part5" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( -8.74228e-08, 0, 2, 0, 2, 0, -2, 0, -8.74228e-08, 244.63, 36.9662, -9.8908 )
 mesh = SubResource( 176 )
-material/0 = null
 
 [node name="Fence2_2_Part6" type="MeshInstance" parent="trailer/fence"]
 transform = Transform( 2.62268e-07, 0, -2, 0, 2, 0, 2, 0, 2.62268e-07, 263.684, 36.9662, -9.86434 )
 mesh = SubResource( 176 )
-material/0 = null
 
 [node name="env" parent="trailer" instance=ExtResource( 6 )]
 
