@@ -470,6 +470,7 @@ func _physics_process(delta):
 			#elif Input.is_action_just_pressed(jump_button):
 			elif (inputBuffKey == jump_button):
 				clearInputBuffer()
+				anim.play("rise")
 				nextState = JUMP
 			elif checkWalk() and (direction != Vector3.ZERO):
 				nextState = WALK
@@ -498,6 +499,7 @@ func _physics_process(delta):
 			#elif Input.is_action_just_pressed(jump_button):
 			elif (inputBuffKey == jump_button):
 				clearInputBuffer()
+				anim.play("rise")
 				nextState = JUMP
 			elif (is_on_floor() == false):
 				nextState = FALLING
@@ -524,6 +526,7 @@ func _physics_process(delta):
 			#elif Input.is_action_just_pressed(jump_button):
 			elif (inputBuffKey == jump_button):
 				clearInputBuffer()
+				anim.play("rise")
 				nextState = JUMP
 			elif (is_on_floor() == false):
 				nextState = FALLING
@@ -566,6 +569,7 @@ func _physics_process(delta):
 			#elif doubleJumpReady and (Input.is_action_just_pressed(jump_button)) and pg.hasDJ:
 			elif doubleJumpReady and (inputBuffKey == jump_button) and pg.hasDJ:
 				clearInputBuffer()
+				anim.play("rise")
 				nextState = DJUMP
 			#elif Input.is_action_just_pressed(light_attack_button):
 			elif (inputBuffKey == light_attack_button):
@@ -596,6 +600,7 @@ func _physics_process(delta):
 			#elif doubleJumpReady and (Input.is_action_just_pressed(jump_button)) and pg.hasDJ:
 			elif doubleJumpReady and (inputBuffKey == jump_button) and pg.hasDJ:
 				clearInputBuffer()
+				anim.play("rise")
 				nextState = DJUMP
 			#elif Input.is_action_just_pressed(light_attack_button):
 			elif (inputBuffKey == light_attack_button):
@@ -717,6 +722,7 @@ func _physics_process(delta):
 			#elif (comboReady) and (hitLanded) and doubleJumpReady and (Input.is_action_just_pressed(jump_button)) and pg.hasDJ:
 			elif (comboReady) and (hitLanded) and doubleJumpReady and (inputBuffKey == jump_button) and pg.hasDJ:
 				clearInputBuffer()
+				anim.play("rise")
 				nextState = DJUMP
 			#elif (comboReady) and (hitLanded) and (Input.is_action_just_pressed(light_attack_button)):
 			elif (comboReady) and (hitLanded) and (inputBuffKey == light_attack_button):
@@ -748,6 +754,7 @@ func _physics_process(delta):
 			#elif (comboReady) and (hitLanded) and doubleJumpReady and (Input.is_action_just_pressed(jump_button)) and pg.hasDJ:
 			elif (comboReady) and (hitLanded) and doubleJumpReady and (inputBuffKey == jump_button) and pg.hasDJ:
 				clearInputBuffer()
+				anim.play("rise")
 				nextState = DJUMP
 			#elif (comboReady) and (hitLanded) and (Input.is_action_just_pressed(light_attack_button)):
 			elif (comboReady) and (hitLanded) and (inputBuffKey == light_attack_button):
@@ -769,6 +776,7 @@ func _physics_process(delta):
 			#elif (comboReady) and (hitLanded) and doubleJumpReady and (Input.is_action_just_pressed(jump_button)) and pg.hasDJ:
 			elif (comboReady) and (hitLanded) and doubleJumpReady and (inputBuffKey == jump_button) and pg.hasDJ:
 				clearInputBuffer()
+				anim.play("rise")
 				nextState = DJUMP
 			#elif (comboReady) and (hitLanded) and (Input.is_action_just_pressed(heavy_attack_button)) and pg.hasAirSpin:
 			elif (comboReady) and (hitLanded) and (inputBuffKey == heavy_attack_button) and pg.hasAirSpin:
@@ -1355,8 +1363,8 @@ func _physics_process(delta):
 		anim.play("run")
 	elif isInState([IDLE]):
 		anim.play("idle")
-	elif isInState([RISING]):
-		anim.play("rise")
+	#elif isInState([RISING]):
+	#	anim.play("rise")
 	elif isInState([FALLING]):
 		anim.play("fall")
 	elif isInState([LAND]):
