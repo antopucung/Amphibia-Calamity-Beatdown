@@ -2141,10 +2141,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.0666667, 0.133333 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.051, 0.102, 0.153, 0.204 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0, 1, 2 ]
+"values": [ 0, 2, 3, 4, 5 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("AnimatedSprite3D:animation")
@@ -2156,7 +2156,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ "attack_slide_L" ]
+"values": [ "attack_L1" ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("AnimatedSprite3D:offset")
@@ -2177,7 +2177,7 @@ tracks/3/loop_wrap = true
 tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
-"times": PoolRealArray( 0, 0.0666667, 0.166667 ),
+"times": PoolRealArray( 0, 0.051, 0.204 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -2189,10 +2189,10 @@ tracks/4/loop_wrap = true
 tracks/4/imported = false
 tracks/4/enabled = true
 tracks/4/keys = {
-"times": PoolRealArray( 0, 0.0666667, 0.166667 ),
+"times": PoolRealArray( 0, 0.051, 0.204 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
-"values": [ Vector3( 0.1, 0.1, 0.1 ), Vector3( 6, 12, 12 ), Vector3( 0.1, 0.1, 0.1 ) ]
+"values": [ Vector3( 0.1, 0.1, 0.1 ), Vector3( 6, 12, 14 ), Vector3( 0.1, 0.1, 0.1 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("hitbox/hitboxCollision:translation")
@@ -2201,10 +2201,10 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 0.0666667, 0.166667 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.051, 0.102, 0.153, 0.204 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 1,
-"values": [ Vector3( 0, 4, 0 ), Vector3( 0, 1, -1 ), Vector3( 0, 4, 0 ) ]
+"values": [ Vector3( 0, 4, 0 ), Vector3( 0, 1, -1.5 ), Vector3( 0, 2, -1.5 ), Vector3( 0, 3, -0.5 ), Vector3( 0, 4, 0 ) ]
 }
 tracks/6/type = "value"
 tracks/6/path = NodePath("..:comboReady")
@@ -2213,7 +2213,7 @@ tracks/6/loop_wrap = true
 tracks/6/imported = false
 tracks/6/enabled = true
 tracks/6/keys = {
-"times": PoolRealArray( 0, 0.0833333 ),
+"times": PoolRealArray( 0, 0.051 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 1,
 "values": [ false, true ]
@@ -4235,7 +4235,7 @@ height = 3.0
 
 [sub_resource type="CapsuleShape" id=5]
 resource_local_to_scene = true
-height = 1.2
+height = 0.01
 
 [sub_resource type="CylinderMesh" id=2]
 height = 0.1
@@ -4278,6 +4278,7 @@ animations = [ {
 transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0 )
 collision_mask = 1030
 script = ExtResource( 2 )
+comboReady = true
 
 [node name="Label" type="Label" parent="."]
 margin_right = 50.0
@@ -4327,7 +4328,8 @@ offset = Vector2( 0, 31 )
 pixel_size = 0.07
 alpha_cut = 1
 frames = SubResource( 56 )
-animation = "land"
+animation = "attack_L1"
+frame = 5
 
 [node name="hitbox" type="Area" parent="zeroPoint"]
 collision_layer = 8
@@ -4350,7 +4352,7 @@ shape = SubResource( 35 )
 [node name="projSpawnPoint" type="Spatial" parent="zeroPoint"]
 
 [node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.6, 0 )
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1, 0 )
 shape = SubResource( 5 )
 
 [node name="shadowMaker" type="MeshInstance" parent="."]
