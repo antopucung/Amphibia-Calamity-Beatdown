@@ -9,7 +9,7 @@ func _ready():
 
 func _on_cameraTrigger_area_entered(area):
 	# finds first alive player
-	var playerName = "Anne"
+	var playerName = "Okka"
 	for i in range(0, 4):
 		if (pg.playerAlive[i]):
 			playerName = pg.playerCharacter[i]

@@ -12,6 +12,6 @@ func _ready():
 func _on_cameraTrigger_area_entered(area):
 	var newDialogue = dialogueScene.instance()
 	get_node("/root/wartwood").add_child(newDialogue)
-	newDialogue.initialize("wartwood_intro", "Anne")
+	newDialogue.initialize("wartwood_intro", "Okka")
 	pg.firstTimeInWartwood = false
 	self.queue_free()

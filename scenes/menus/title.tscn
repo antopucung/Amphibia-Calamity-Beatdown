@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://scenes/menus/title.gd" type="Script" id=1]
 [ext_resource path="res://themes/playerPanelText.tres" type="Theme" id=2]
@@ -17,6 +17,7 @@
 [ext_resource path="res://art/menus/main menu/flag_fr.png" type="Texture" id=15]
 [ext_resource path="res://art/mod/title.png" type="Texture" id=16]
 [ext_resource path="res://art/menus/main menu/BG - Village.png" type="Texture" id=17]
+[ext_resource path="res://art/Okka/Okka Logo.png" type="Texture" id=18]
 
 [sub_resource type="SpriteFrames" id=14]
 animations = [ {
@@ -90,7 +91,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 40, 310 ) ]
+"values": [ Vector2( 511, 310 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("mainMenu/controlsButton:rect_position")
@@ -102,7 +103,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 100, 410 ) ]
+"values": [ Vector2( 511, 410 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("mainMenu/creditsButton:rect_position")
@@ -114,7 +115,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 160, 510 ) ]
+"values": [ Vector2( 511, 510 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("mainMenu/exitButton:rect_position")
@@ -126,7 +127,7 @@ tracks/5/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 220, 610 ) ]
+"values": [ Vector2( 511, 610 ) ]
 }
 
 [sub_resource type="Animation" id=12]
@@ -150,7 +151,7 @@ tracks/1/path = NodePath("mainMenu/logo:scale")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/keys = {
 "times": PoolRealArray( 0, 0.333333, 0.45, 0.516667, 0.6 ),
 "transitions": PoolRealArray( 1, 0.5, -2, -2, 1 ),
@@ -167,7 +168,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0, 0.683333, 1.05 ),
 "transitions": PoolRealArray( 1, 0.3, 1 ),
 "update": 0,
-"values": [ Vector2( -500, 310 ), Vector2( -560, 310 ), Vector2( 40, 310 ) ]
+"values": [ Vector2( -500, 310 ), Vector2( -560, 310 ), Vector2( 511, 310 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("mainMenu/controlsButton:rect_position")
@@ -179,7 +180,7 @@ tracks/3/keys = {
 "times": PoolRealArray( 0, 0.833333, 1.2 ),
 "transitions": PoolRealArray( 1, 0.3, 1 ),
 "update": 0,
-"values": [ Vector2( -500, 410 ), Vector2( -500, 410 ), Vector2( 100, 410 ) ]
+"values": [ Vector2( -500, 410 ), Vector2( -500, 410 ), Vector2( 511, 410 ) ]
 }
 tracks/4/type = "value"
 tracks/4/path = NodePath("mainMenu/creditsButton:rect_position")
@@ -191,7 +192,7 @@ tracks/4/keys = {
 "times": PoolRealArray( 0, 0.983333, 1.35 ),
 "transitions": PoolRealArray( 1, 0.3, 1 ),
 "update": 0,
-"values": [ Vector2( -500, 510 ), Vector2( -440, 510 ), Vector2( 160, 510 ) ]
+"values": [ Vector2( -500, 510 ), Vector2( -440, 510 ), Vector2( 511, 510 ) ]
 }
 tracks/5/type = "value"
 tracks/5/path = NodePath("mainMenu/exitButton:rect_position")
@@ -200,10 +201,22 @@ tracks/5/loop_wrap = true
 tracks/5/imported = false
 tracks/5/enabled = true
 tracks/5/keys = {
-"times": PoolRealArray( 0, 1.13333, 1.5 ),
+"times": PoolRealArray( 0, 1.13333, 1.496 ),
 "transitions": PoolRealArray( 1, 0.3, 1 ),
 "update": 0,
-"values": [ Vector2( -500, 610 ), Vector2( -380, 610 ), Vector2( 220, 610 ) ]
+"values": [ Vector2( -500, 610 ), Vector2( -380, 610 ), Vector2( 511, 610 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("mainMenu/logoNew:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.33, 0.45, 0.527, 0.6 ),
+"transitions": PoolRealArray( 1, 0.5, -2, -2, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 1e-05, 1e-05 ), Vector2( 3.3, 3.3 ), Vector2( 2.85, 2.85 ), Vector2( 3, 3 ) ]
 }
 
 [node name="title" type="Control"]
@@ -285,20 +298,23 @@ __meta__ = {
 [node name="mainMenu" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="logo" type="Sprite" parent="mainMenu"]
+visible = false
 position = Vector2( 275, 160 )
 scale = Vector2( 2, 2 )
 texture = ExtResource( 11 )
 
+[node name="logoNew" type="Sprite" parent="mainMenu"]
+position = Vector2( 652, 160 )
+scale = Vector2( 3, 3 )
+texture = ExtResource( 18 )
+
 [node name="startButtonOld" type="Button" parent="mainMenu"]
 visible = false
-margin_left = 136.0
+margin_left = 511.0
 margin_top = 320.0
-margin_right = 394.0
+margin_right = 769.0
 margin_bottom = 392.0
 theme = ExtResource( 4 )
 button_mask = 0
@@ -308,9 +324,9 @@ __meta__ = {
 }
 
 [node name="startButton" parent="mainMenu" instance=ExtResource( 12 )]
-margin_left = 40.0
+margin_left = 511.0
 margin_top = 310.0
-margin_right = 340.0
+margin_right = 811.0
 margin_bottom = 410.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath(".")
@@ -319,9 +335,9 @@ focus_neighbour_bottom = NodePath("../controlsButton")
 defaultButton = true
 
 [node name="controlsButton" parent="mainMenu" instance=ExtResource( 12 )]
-margin_left = 100.0
+margin_left = 511.0
 margin_top = 410.0
-margin_right = 400.0
+margin_right = 811.0
 margin_bottom = 510.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath("../startButton")
@@ -333,9 +349,9 @@ __meta__ = {
 type = 1
 
 [node name="creditsButton" parent="mainMenu" instance=ExtResource( 12 )]
-margin_left = 160.0
+margin_left = 511.0
 margin_top = 510.0
-margin_right = 460.0
+margin_right = 811.0
 margin_bottom = 610.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath("../controlsButton")
@@ -347,17 +363,14 @@ __meta__ = {
 type = 2
 
 [node name="exitButton" parent="mainMenu" instance=ExtResource( 12 )]
-margin_left = 220.0
+margin_left = 511.0
 margin_top = 610.0
-margin_right = 520.0
+margin_right = 811.0
 margin_bottom = 710.0
 focus_neighbour_left = NodePath(".")
 focus_neighbour_top = NodePath("../creditsButton")
 focus_neighbour_right = NodePath(".")
 focus_neighbour_bottom = NodePath(".")
-__meta__ = {
-"_edit_use_anchors_": false
-}
 type = 3
 
 [node name="Button" type="TextureButton" parent="mainMenu"]

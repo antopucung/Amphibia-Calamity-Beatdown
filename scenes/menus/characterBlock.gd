@@ -1,7 +1,7 @@
 extends Control
 
 var playerNumber = 0
-var playerChoice = "Anne"
+var playerChoice = "Okka"
 var playerChoiceIndex = 0
 var playerInput = "k0"
 var playerInputIndex = 0

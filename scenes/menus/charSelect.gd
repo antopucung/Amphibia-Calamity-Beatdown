@@ -33,7 +33,7 @@ func _ready():
 	pg.playerActive = [false, false, false, false]
 	pg.playerReady = [true, true, true, true]
 	pg.playerInput = ["X", "X", "X", "X"]
-	pg.playerCharacter = ["Anne", "Anne", "Anne", "Anne"]
+	pg.playerCharacter = ["Okka", "Okka", "Okka", "Okka"] #["Anne", "Anne", "Anne", "Anne"]
 	# focus
 	#$mapButton.grab_focus()
 

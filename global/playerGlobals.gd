@@ -34,7 +34,7 @@ var playerActive = [false, false, false, false]
 var playerReady = [true, true, true, true]
 var playerAlive = [false, false, false, false]
 var playerInput = ["X", "X", "X", "X"]
-var playerCharacter = ["Anne", "Anne", "Anne", "Anne"]
+var playerCharacter = ["Okka", "Okka", "Okka", "Okka"] #["Anne", "Anne", "Anne", "Anne"]
 var playerLives = [0, 0, 0, 0]
 var playerCoins = [0, 0, 0, 0]
 var playerHealth = [100, 100, 100, 100]
@@ -59,14 +59,14 @@ var levelMusic = "ripple"
 var levelNum = 0
 
 # playable characters
-var hasMarcy  = true
-var hasSasha  = true
-var hasSprig = true
-var hasMaggie = true
+var hasMarcy  = false #true
+var hasSasha  = false #true
+var hasSprig = false #true
+var hasMaggie = false #true
 var hasGrime = false
 var hasDarla = false
 var hasOkka = true
-var availableChars = ["Anne"]
+var availableChars = ["Okka"] #["Anne"]
 
 var clover = false
 
@@ -102,7 +102,7 @@ var prefLang = "en"
 
 func recalcInfo():
 	# characters
-	availableChars = ["Anne"]
+	availableChars = ["Okka"] #["Anne"]
 	if hasSprig or allCharsMode:
 		availableChars.append("Sprig")
 	if hasSasha or allCharsMode:
